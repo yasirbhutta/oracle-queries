@@ -1,6 +1,7 @@
 
-create user hr1 identified by paki123;
---drop user <user name>;
+create user ahmad identified by paki123;
+
+drop user ahmad;
 
 --Grant the user the necessary privileges.
 
@@ -8,4 +9,4 @@ grant CREATE SESSION, ALTER SESSION, CREATE DATABASE LINK,
   CREATE MATERIALIZED VIEW, CREATE PROCEDURE, CREATE PUBLIC SYNONYM, 
   CREATE ROLE, CREATE SEQUENCE, CREATE SYNONYM, CREATE TABLE, 
   CREATE TRIGGER, CREATE TYPE, CREATE VIEW, UNLIMITED TABLESPACE
-  to <user name>;
+  to ahmad;
