@@ -7,3 +7,6 @@ ORDER BY FIRST_NAME;
 SELECT FIRST_NAME, HIRE_DATE
 FROM EMPLOYEES
 ORDER BY LAST_NAME;
+
+
+select first_name, salary from employees order by salary desc;

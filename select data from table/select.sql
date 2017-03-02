@@ -6,7 +6,7 @@ SELECT FIRST_NAME, LAST_NAME, DEPARTMENT_ID
 FROM EMPLOYEES;
 
 -- Displaying Selected Columns Under New Headings
-SELECT FIRST_NAME First, LAST_NAME last, DEPARTMENT_ID DepT
+SELECT FIRST_NAME FirstN, LAST_NAME last, DEPARTMENT_ID DepT
 FROM EMPLOYEES;
 
 -- Preserving Case and Including Spaces in Column Aliases
