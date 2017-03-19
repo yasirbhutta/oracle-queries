@@ -1,7 +1,7 @@
 
-create user ahmad identified by paki123;
+create user sms identified by paki123;
 
-drop user ahmad;
+drop user sms;
 
 --Grant the user the necessary privileges.
 
@@ -9,4 +9,6 @@ grant CREATE SESSION, ALTER SESSION, CREATE DATABASE LINK,
   CREATE MATERIALIZED VIEW, CREATE PROCEDURE, CREATE PUBLIC SYNONYM, 
   CREATE ROLE, CREATE SEQUENCE, CREATE SYNONYM, CREATE TABLE, 
   CREATE TRIGGER, CREATE TYPE, CREATE VIEW, UNLIMITED TABLESPACE
-  to ahmad;
+  to sms;
+
+  
