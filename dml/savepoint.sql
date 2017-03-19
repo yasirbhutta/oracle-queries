@@ -1,0 +1,88 @@
+--Example 3–9 Rolling Back a Transaction to a Savepoint
+--
+--Check REGIONS table before transaction:
+--
+SELECT * FROM REGIONS
+ORDER BY REGION_ID;
+--
+--Check countries in region 4 before transaction:
+--
+SELECT COUNTRY_NAME, COUNTRY_ID, REGION_ID
+FROM COUNTRIES
+WHERE REGION_ID = 4
+ORDER BY COUNTRY_NAME;
+--
+--Check countries in region 5 before transaction:
+--
+SELECT COUNTRY_NAME, COUNTRY_ID, REGION_ID
+FROM COUNTRIES
+WHERE REGION_ID = 5
+ORDER BY COUNTRY_NAME;
+--
+--Transaction, with several savepoints:
+--
+UPDATE REGIONS
+SET REGION_NAME = 'Middle East'
+WHERE REGION_NAME = 'Middle East and Africa';
+
+UPDATE COUNTRIES
+SET REGION_ID = 5
+WHERE COUNTRY_ID = 'ZM';
+SAVEPOINT zambia;
+
+UPDATE COUNTRIES
+SET REGION_ID = 5
+WHERE COUNTRY_ID = 'NG';
+SAVEPOINT nigeria;
+
+UPDATE COUNTRIES
+SET REGION_ID = 5
+WHERE COUNTRY_ID = 'ZW';
+SAVEPOINT zimbabwe;
+
+UPDATE COUNTRIES
+SET REGION_ID = 5
+WHERE COUNTRY_ID = 'EG';
+SAVEPOINT egypt;
+--
+---Check REGIONS table after transaction:
+--
+SELECT * FROM REGIONS
+ORDER BY REGION_ID;
+--
+--Check countries in region 4 after transaction:
+--
+SELECT COUNTRY_NAME, COUNTRY_ID, REGION_ID
+FROM COUNTRIES
+WHERE REGION_ID = 4
+ORDER BY COUNTRY_NAME;
+--
+--Check countries in region 5 after transaction:
+--
+SELECT COUNTRY_NAME, COUNTRY_ID, REGION_ID
+FROM COUNTRIES
+WHERE REGION_ID = 5
+ORDER BY COUNTRY_NAME;
+
+ROLLBACK TO SAVEPOINT nigeria;
+
+--Check REGIONS table after rollback:
+SELECT * FROM REGIONS
+ORDER BY REGION_ID;
+
+--Check countries in region 4 after rollback:
+SELECT COUNTRY_NAME, COUNTRY_ID, REGION_ID
+FROM COUNTRIES
+WHERE REGION_ID = 4
+ORDER BY COUNTRY_NAME;
+--
+--Check countries in region 5 after rollback:
+--
+SELECT COUNTRY_NAME, COUNTRY_ID, REGION_ID
+FROM COUNTRIES
+WHERE REGION_ID = 5
+ORDER BY COUNTRY_NAME;
+
+
+
+
