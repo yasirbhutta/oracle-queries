@@ -1,5 +1,6 @@
 drop table students;
-Create table students (student_id number(6), student_name varchar2(30),constraint students_pk primary key (student_id));
+
+Create table students (student_id number(6), student_name varchar2(30) not null,constraint students_pk primary key (student_id));
 --
 -- procedure
 --
@@ -27,8 +28,8 @@ END ADD_STUDENT;
 DECLARE
 BEGIN
    ADD_STUDENT(
-    STUDENT_ID => 7,
-    STUDENT_NAME => 'Muhammad Ahmad'
+    STUDENT_ID => 9,
+    STUDENT_NAME => 'Muhammad Nasir'
   );
 --rollback; 
 END;
