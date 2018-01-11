@@ -1,6 +1,9 @@
 drop table students;
 
-Create table students (student_id number(6), student_name varchar2(30) not null,constraint students_pk primary key (student_id));
+Create table students (
+  student_id number(6), 
+student_name varchar2(30) not null,
+constraint students_pk primary key (student_id));
 --
 -- procedure
 --
