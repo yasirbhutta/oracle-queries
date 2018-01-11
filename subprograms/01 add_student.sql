@@ -40,8 +40,5 @@ END;
 -- show student
 --
 
-select * 
-
-from students 
-
+select * from students 
 order by student_id;
