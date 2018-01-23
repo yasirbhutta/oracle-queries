@@ -62,6 +62,9 @@ End pkg_std;
 -- Run or execute
 --
 
+-- SET SERVEROUTPUT ON;
+--
+
 DECLARE
 
 v_result NUMBER;
