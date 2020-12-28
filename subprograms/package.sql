@@ -23,7 +23,6 @@ End;
 -- 
 -- Package Body
 --
-<<<<<<< HEAD
 Create or replace package body pkg_std as
 --
 -- Procedure
@@ -94,6 +93,3 @@ END;
 --
 
 select * from students order by student_id;
-=======
-
->>>>>>> master
